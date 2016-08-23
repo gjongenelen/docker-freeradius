@@ -39,7 +39,7 @@ sed -i '/sql.conf$/ s/#//' /etc/freeradius/radiusd.conf
 sed -i -e "/^\tserver/ s/localhost/$mysql_server/" \
 	-e "/^\tlogin/ s/radius/$mysql_login/" \
 	-e "/^\tpassword/ s/radpass/$mysql_passwd/" \
-	-e "/^\tradius_db/ s/radius/$mysql_database/" /etc/freeradius/sql.conf
+	-e "/^\tradius_db/ s/radius\"/$mysql_database\"/" /etc/freeradius/sql.conf
 sed -i 's/^#[ \t]sql$/\tsql/' /etc/freeradius/sites-available/default
 sed -i 's/^#[ \t]sql$/\tsql/' /etc/freeradius/sites-available/inner-tunnel
 #default_eap_type
